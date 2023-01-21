@@ -1,0 +1,62 @@
+1. State representation is a dictionary is a dictionary of size m x n, with keys being a tuple that represents x and y coordinates of the carpark while the values 
+are true if the coordinate is occupied or cleaned and false if the coordinate is neither occupied nor cleaned.
+
+Initial state is a m x n dictionary with the keys being the coordinates of the carpark, and all keys have a true vaslues for those coordinates
+that are occupied, and false for those coordinates that are not occupied.
+
+Actions:
+1. Move up 1cm
+2. Move down 1cm
+3. Move left 1cm
+4. Move right 1cm
+5. clean current area
+
+Transition model consists of 2 functions. The first function is the changing of the robot's position for actiosn 1,2,3,4 stated above.
+The second function is the the changing of the value of the coordinate key in the state representation from false to true for action 5 stated above.
+
+Step cost is +1 for each action.
+
+Goal test is to check that all the values in the state representation dictionary are all true.
+
+
+2a.
+i. S, F, J, I, B, H, A, D, K, G
+ii. S, F, J, I, B, H, A, D, K, G
+iii. S, J, H, A, G  *** (???)
+
+b.
+i. S, J, B, F, I, A, D, G
+ii. S-F-I-A-G
+
+3. For each iteration of the algorithm, b operations are performed as b number of values are pushed into the frontier.
+   Since, C* is the optimal path cost and epsilon is the minimum estimated step cost, the number of steps taken is C*/epsilon.
+   However a +1 step is required to perform the late goal test to ensure that the algorithm is optimal.
+   Hence, the time complexity is b^number of steps = b^(C*/epsilon)
+
+4.
+h4 and h5 are admissible while h6 and h7 are inadmissible.
+
+5. g(n) = max(h1(n), h2(n), h3(n)... hn(n))
+
+6a.
+i. partially observable
+ii. single
+iii. deterministic
+iv. static
+v. discrete
+
+6b.
+k = 0 (???)
+Since g(s_g) = 0 where s_g is the goal node.
+h1(s_g) = 0 <= g*(s_g) satisfy the condition of h(n) <= g(n) at the gaol node.
+
+Since g(n_i) >= g*(s_g),
+h1(s_g) will always be <= h1(s_i) therefore h1(s_i)=0 is admissible.
+
+6c.
+1 for states with yellow mor grey tiles, and 0 if and only if all tiles are green.
+Any states with incorrect tiles, can find the solution in one more guess in the best case scenario.
+States with all green tiles means the solution is found and there is no need to make any more guesses.
+Hence, this heuristic is admissible.
+
+Since h2(n) will always be a 0 or 1 while h1(n) will always be a 0; as both are admissible, h2(n) <= h1(n)

@@ -1,0 +1,5 @@
+Rows:15
+Cols:15
+Number of Obstacles: 20
+Position of Obstacles (space between):b4 b12 d1 d9 d14 h6 j4 j11 m13 a7 c10 e3 e9 f10 f14 g8 h8 i1 i0 k14
+Number of King, Queen, Bishop, Rook, Knight (space between):31 0 2 2 7

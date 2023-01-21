@@ -1,0 +1,58 @@
+1.) 
+BFS: Y, depth(n) or g(n) or 0 
+DFS: Y, -depth(n) or 1/depth(n)
+2.) 
+h6(s) = MAX(h1(s), h2(s), h­3(s)) 
+h7(s) = MIN(h1(s) + h2(s), h­3(s)) 
+h8(s) = h1(s)/3 + h2(s)/3 + h­3(s)/3
+3.) 6
+4.) 
+We may define a set of values for the leaf nodes such that node B is not evaluated. 
+We may define a set of values for the leaf nodes such that no pruning occurs anywhere in the game tree.
+5.) Neither (i) nor (ii).
+6.) False
+7.) True
+8.) Admissible. Given k boxes that are not in their storage positions, at least one move is required to get each of these onto the storage locations, and hence h is admissible.
+9.) Manhattan Distance/ Euclidean Distance
+10.) 
+For all v_i in V, for all k != k’ in [1, m], pref(v, k) != pref(v, k’)
+There exists a v_i in V such that rank(v_i, w) = 1 AND for all v_j in V, rank(v_j, w) > m
+11.) 
+Domain of A after running AC-3: (3, 5)
+Domain of B after running AC-3: (2, 4)
+Domain of C after running AC-3: (3, 4, 5)
+Domain of D after running AC-3: (1, 2)
+Trace:
+a)     Domain of B reduced to {2, 4}, queue: (D, B), (D, C), (C, D), (A, B)
+b)     Domain of D reduced to {1, 2}, queue: (D, C), (C, D), (A, B)
+c)     Domain of D unchanged, queue: (C, D), (A, B)
+d)     Domain of C reduced to {3, 4, 5}, queue: (A, B), (A, C)
+e)     Domain of A reduced to {3, 5}, queue: (A, C), (C, A)
+f)     Domain of A unchanged: (C, A)
+g)     Domain of C unchanged, queue: {}
+12.) A = 5, B = 4, C = 5, D = 2
+13.) Detailed Answer in last tutorial
+W -> D --> 1. ~W | D
+W -> P --> 2. ~W | P
+P -> T --> 3. ~P | T
+T -> S --> 4. ~T | S
+
+~[W -> S] --> ~(~W | S) --> W & ~S
+--> 5. W
+--> 6. ~S
+
+--> 7. (~W | P) & (W) --> P    // 2 & 5
+--> 8. (~P | T) & (P) --> T    // 3 & 7
+--> 9. (~T | S) & (T) --> S    // 4 & 8
+--> 10. (~S) & (S) --> {}    // 6 & 9
+
+= UNSATISFIABLE - i.e., can infer W -> S
+14.) Detailed Answer in last tutorial
+Pr[S, B, D, T] 
+= Pr[S, B, D, T, O] + Pr[S, B, D, T, ~O]
+= Pr[T|D]Pr[T|B]Pr[D|O]Pr[D|S]Pr[B|O]Pr[B|S]Pr[O]Pr[S] + Pr[T|D]Pr[T|B]Pr[D|~O]Pr[D|S]Pr[B|~O]Pr[B|S]Pr[~O]Pr[S]
+15.) False
+16.) True
+17.) 0.158
+18.) 0.288
+19.) 0.5

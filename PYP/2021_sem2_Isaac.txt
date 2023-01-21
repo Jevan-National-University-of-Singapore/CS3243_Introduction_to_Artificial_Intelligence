@@ -1,0 +1,95 @@
+1)
+Yes
+depth(n) (How deep down you traverse due to you exploring all nodes at the same level)
+Yes
+-depth(n) (shallower the node the lower the cost?)
+2)
+h_6(max of 3 admissible is admissible)
+h_7 (it will take either h_3 an admissible heuristic or anything smaller which means that h_1+h_2 is also admissible)
+h_8 because the largest heuristic divide by 3 adding smaller heuristics that are divided by 3 
+will still be smaller than the largest heuristics)
+3)M,L,K,F,E,D
+4)
+L will be definitely visited
+E will be definitely visited
+K will also be definitely visited
+4,5
+5)
+its the same because you do it both ways
+no, only linear CSP can be solved in linear time
+6) never learn
+7) never learn
+8)
+admissible
+the boxes need at least one move to be in the storage position hence it would underestimate the
+cost in other scenarios
+9)
+Using euclidean distance from the box to the storage space.
+This would at least one move or more for the box to be moved there, hence it dominates h.
+This would be always lower than the actual cost as euclidean distance takes into account
+diagonal movements only while the game only allows for up,down,left,right
+10)
+1. for all v_i in V, for all k != k' in [1,m], pref(v,k) != pref(v,k')
+2. there exist a v_i in V s.t. rank(v_i,w) = 1 and for all v_i in V, rank(v_i,w) != m
+11)
+a)
+Trace
+Pop (B,D) D_B = (2,4) Queue: (D,B), (D,C), (C,D), (A,C)
+Pop (D,B) D_D = (1,2) Queue: (D,C), (C,D), (A,C), (C,A)
+Pop (D,C) D_D = (1,2) Queue: (C,D), (A,C), (C,A), (A,B) (cuz c has 2,3 that is larger than d)
+Pop (C,D) D_C = (3,4,5) Queue: (A,C), (C,A), (A,B), (B,A)
+Pop (A,C) D_A = (3,4,5) Queue: (C,A), (A,B), (B,A)
+Pop (C,A) D_C = (3) Queue: (A,B), (B,A)
+Pop (A,B) D_A = (3,5) Queue: (B,A)
+Pop (B,A) D_B = (2,4)
+b)
+D_A = (3,5) 
+D_B = (2,4)
+D_C = (3)
+D_D = (1,2)
+12)
+A=3
+B=2
+D=2
+C=3
+13)
+W=>P (~W or P) 1
+W=>D (~W or D) 2
+T=>S (~T or S) 3
+P=>T (~P or T) 4
+
+Prove:negation of W=>S
+(W and ~S) => W 5, ~S 6
+Resolve 1 and 5: P 7
+Resolve 7 and 4: T 8
+Resolve 8 and 3: S 9
+Resolve 9 and 6: NULL
+
+14)
+P(S, B, D, T) 
+= P(S, B, D, T, O) + P(S, B, D, T, ~O)
+= P(S|BD)P(B|OT)P(D|OT)P(T)P(O) + P(S|BD)P(B|~OT)P(D|~OT)P(T)P(~O)
+15) False
+dependent on Tip 
+16)
+True
+It will not be dependent on oil and salt as it has "reached" past that
+17)
+P(T|B) 
+= P(T|B,D) + P(T|B,~D)
+= P(T|B,D)*P(B)*P(D) + P(T|B,~D)*P(B)*P(~D)
+= 0.3*(0.7*0.6*0.8+0.4*0.2*0.6+0.4*0.4*0.8+0.1*0.4*0.2)*(0.2*0.6*0.8+0.4*0.6*0.2+0.3*0.4*0.8+0.6*0.4*0.2)
++ 0.6*(0.7*0.6*0.8+0.4*0.2*0.6+0.4*0.4*0.8+0.1*0.4*0.2)*1-(0.2*0.6*0.8+0.4*0.6*0.2+0.3*0.4*0.8+0.6*0.4*0.2)
+=0.267?( i not sure)
+
+18)
+P(D) 
+= P(D|O,S)*P(O)*P(S) + P(D|O,~S)*P(O)*P(~S) + P(D|~O,S)*P(~O)*P(S) + P(D|~O,~S)*P(~O)*P(~S)
+= 0.048 + 0.096 + 0.048 + 0.096
+= 0.288
+
+19)
+P(O|D) 
+= P(O and D)/P(D)
+= (0.3*0.4*0.8 + 0.6*0.4*0.2)/0.288
+= 0.5

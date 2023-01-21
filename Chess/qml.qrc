@@ -1,0 +1,12 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>Images/Bishop.png</file>
+        <file>Images/ChessPieces.png</file>
+        <file>Images/King.png</file>
+        <file>Images/Knight.png</file>
+        <file>Images/Queen.png</file>
+        <file>Images/Rook.png</file>
+        <file>Images/Obstacle.png</file>
+    </qresource>
+</RCC>

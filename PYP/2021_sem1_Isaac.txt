@@ -1,0 +1,169 @@
+1)
+let A be arrakis is LL, M be  middle-earth is LL and N be narnia is LL
+
+p1. A or M or N
+p2. A -> (M or N) ~A or M or N
+p3. N -> A = ~N or A
+p4. (M and A) -> N N or ~A or ~M
+p5. M -> (A or N) A or N or ~M
+p6. ~N or ~M
+
+P7. ~(A and M and N) = (~A or ~M or ~N)
+
+Resolve p1 and p8 you get an empty set
+
+2)
+let F be Federer retire, D be Djokovic retire and N be Nadal retire
+
+p1. F -> (D or ~N) = ~F or D or ~N
+p2. D -> (~F or N) = ~D or ~F or N
+p3. (~F and ~N) -> ~D = ~D or F or N
+p4. N -> F = F or ~N
+p5. ~N or ~F or ~D
+
+P6. ~(~D and ~N) = D or N
+
+Resolve p2 and p5 to get ~D or ~F p7
+Resolve p3 and p7 to get ~D or N p8
+Resolve p8 and p6 to get N p9
+Resolve p9 and p4 to get F p10
+Resolve p1 and p5 to get ~F or ~N p11
+Resolve p11 and p4 to get ~N p12
+resolve p12 and p9 to get Null?
+
+3)
+a)
+start 
+D_1 = (1,2,3,4,5)
+D_2 = (1,2,3,4,5)
+D_3 = (1,2,3,4,5)
+D_4 = (1,2,3,4,5)
+D_5 = (1,2,3,4,5)
+first iteration
+D_1 = p1
+D_2 = (4,5)
+D_3 = (1,4,5)
+D_4 = (1,2,3,5)
+D_5 = (1,2,3,4)
+second iteration
+D_1 = p1
+D_2 = p4
+D_3 = (1)
+D_4 = (1)
+D_5 = (2,3,4)
+third iteration
+D_1 = p1
+D_2 = p5
+D_3 = p1
+D_4 = (1,2,5)
+D_5 = (1,3,4)
+
+b)
+start 
+D_1 = (1,2,3,4,5)
+D_2 = (1,2,3,4,5)
+D_3 = (1,2,3,4,5)
+D_4 = (1,2,3,4,5)
+D_5 = (1,2,3,4,5)
+first iteration
+D_1 = p1
+D_2 = (4,5)
+D_3 = (1)
+D_4 = (5)
+D_5 = (1,4)
+second iteration
+D_1 = p1
+D_2 = p5
+D_3 = (1)
+D_4 = (5)
+D_5 = (1)
+third iteration
+D_1 = p1
+D_2 = p5
+D_3 = p1
+D_4 = (5)
+D_5 = (1)
+
+3)
+P(P=K) = 0.3
+P(P=J) = 0.4
+P(P=I) = 0.3
+
+P(S|P=K) = 2/3
+P(S|P=J) = 3/4
+P(S|P=I) = 2/3
+
+
+P(W|P=K) = 1/3
+P(W|P=J) = 2/4
+P(W|P=I) = 1/3
+
+
+P(C|P=K) = 2/3
+P(C|P=J) = 1/4
+P(C|P=I) = 2/3
+
+
+P(R|P=K) = 1/3
+P(R|P=J) = 3/4
+P(R|P=I) = 1/3
+
+_____________________
+
+
+P(S|P=K) = 2/3
+P(S|P=J) = 3/4
+P(S|P=I) = 2/3
+
+P(W|S) = 3/7
+P(W|~S) = 1/3
+
+P(C|W) = 2/4
+P(C|~W) = 3/6
+
+
+P(R|W) = 1/4
+P(R|~W) = 4/6
+
+2.
+M_A:
+P(P=K|~W,~C,~R)
+= P(P=K,~W,~C,~R)/P(~W,~C,~R)
+
+P(P=K,~W,~C,~R) = (1 - 1/3) * (1 - 2/3) * (1 - 1/3) * 0.3 = 2/45
+
+P(~W,~C,~R) = sum of total possiblities 
+= (1 - 1/3) * (1 - 2/3) * (1 - 1/3) * 0.3 
++ (1 - 1/3) * (1 - 2/3) * (1 - 1/3) * 0.3
++ (1 - 1/2) * (1 - 1/4) * (1 - 3/4) * 0.4
+= 2/45 + 2/45 + 3/80 = 91/720
+
+P(P=K|~W,~C,~R) 
+= 2/45 / 91/720
+= 32/91
+
+M_B:
+P(P=K|~W,~C,~R)
+= P(P=K,~W,~C,~R)/P(~W,~C,~R)
+
+P(P=K,~W,~C,~R) 
+= P(P=K) * P(S|P=K) * P(~W|S) * P(~R|~W) * P(~C|~W) 
++ P(P=K) * P(~S|P=K) * P(~W|~S) * P(~R|~W) * P(~C|~W) 
+= 0.3 * 1/3 * 2/3 * 1/2 * 1/3
++ 0.3 * 2/3 * 4/7 * 1/2 * 1/3
+= 2/63
+
+P(~W,~C,~R)
+= sum of total possiblities 
+= 2/63 + 1/140 + 1/90 + 1/70 + 1/35 + 1/90 = 131/1260
+
+P(P=K|~W,~C,~R) = 2/63 / 131/1260
+
+3.
+model A as it predicted john to be a kickboxer with a high accuracy
+
+4.)
+
+5)
+It will not always return the simple path with maximum cost as there might be
+a positive cycle and it will continue to stay in the cycle.
